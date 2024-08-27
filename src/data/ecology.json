@@ -1,0 +1,322 @@
+{
+    "Ganoderma": {
+        "genus": ["parasitic", "saprotrophic"]        
+    },
+    "Psilocybe": {
+        "genus": ["saprotrophic"]
+    },
+    "Amanita": {
+        "genus": ["mycorrhizal"]
+    },
+    "Clathrus": {
+        "genus": ["saprotrophic"]
+    },
+    "Mycosylva": {
+        "genus": ["saprotrophic"]
+    },
+    "Russula": {
+        "genus": ["mycorrhizal"]
+    },
+    "Conocybe": {
+        "genus": ["saprotrophic"]
+    },
+    "Annulohypoxylon": {
+        "genus": ["saprotrophic"]
+    },
+    "Leratiomyces": {
+        "genus": ["saprotrophic"]
+    },
+    "Pluteus": {
+        "genus": ["saprotrophic"]
+    },
+    "Agaricus": {
+        "genus": ["saprotrophic"]
+    },
+    "Lepraria": {
+        "genus": ["lichenaceous"]
+    },
+    "Flavopunctelia": {
+        "genus": ["lichenaceous"]
+    },
+    "Teloschistes": {
+        "genus": ["lichenaceous"]
+    },
+    "Teloschistaceae": {
+        "genus": ["lichenaceous"]
+    },
+    "Xanthoria": {
+        "genus": ["lichenaceous"]
+    },
+    "Xanthoparmelia": {
+        "genus": ["lichenaceous"]
+    },
+    "Lecanora": {
+        "genus": ["lichenaceous"]
+    },
+    "Lecidella": {
+        "genus": ["lichenaceous"]
+    },
+    "Chrysothrix": {
+        "genus": ["lichenaceous"]
+    },
+    "Verrucaria": {
+        "genus": ["lichenaceous"]
+    },
+    "Candelariella": {
+        "genus": ["lichenaceous"]
+    },
+    "Candelaria": {
+        "genus": ["lichenaceous"]
+    },
+    "Flavoplaca": {
+        "genus": ["lichenaceous"]
+    },
+    "Flavoparmelia": {
+        "genus": ["lichenaceous"]
+    },
+    "Volvopluteus": {
+        "genus": ["saprotrophic"]
+    },
+    "Lactarius": {
+        "genus": ["mycorrhizal"]
+    },
+    "Ceriporia": {
+        "genus": ["saprotrophic"]
+    },
+    "Tremella": {
+        "genus": ["parasitic"]
+    },
+    "Phaeotremella": {
+        "genus": ["parasitic"]
+    },
+    "Dacrymyces": {
+        "genus": ["parasitic"]
+    },
+    "Naematelia": {
+        "genus": ["parasitic"]
+    },
+    "Tubaria": {
+        "genus": ["saprotrophic"]
+    },
+    "Taphrina": {
+        "genus": ["pathogenic"]
+    },
+    "Scleroderma": {
+        "genus": ["mycorrhizal"]
+    },
+    "Coprinopsis": {
+        "genus": ["saprotrophic"]
+    },
+    "Coprinus": {
+        "genus": ["saprotrophic"]
+    },
+    "Coprinellus": {
+        "genus": ["saprotrophic"]
+    },
+    "Leccinum": {
+        "genus": ["mycorrhizal"]
+    },
+    "Parasola": {
+        "genus": ["saprotrophic"]
+    },
+    "Psathyrella": {
+        "genus": ["saprotrophic"]
+    },
+    "Chlorophyllum": {
+        "genus": ["saprotrophic"]
+    },
+    "Agrocybe": {
+        "genus": ["saprotrophic"]
+    },
+    "Collybia": {
+        "genus": ["saprotrophic"]
+    },
+    "Pisolithus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Ramalina": {
+        "genus": ["lichenaceous"]
+    },
+    "Bolbitius": {
+        "genus": ["saprotrophic"]
+    },
+    "Stropharia": {
+        "genus": ["saprotrophic"]
+    },
+    "Suillus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Tapinella": {
+        "genus": ["saprotrophic"]
+    },
+    "Puccinia": {
+        "genus": ["pathogenic"]
+    },
+    "Panaeolus": {
+        "genus": ["saprotrophic"]
+    },
+    "Collybiopsis": {
+        "genus": ["saprotrophic"]
+    },
+    "Stereum": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Laetiporus": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Cladonia": {
+        "genus": ["lichenaceous"]
+    },
+    "Hypholoma": {
+        "genus": ["saprotrophic"]
+    },
+    "Trametes": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Myxarium": {
+        "genus": ["saprotrophic"]
+    },
+    "Peziza": {
+        "genus": ["saprotrophic"]
+    },
+    "Hygrocybe": {
+        "genus": ["saprotrophic"]
+    },
+    "Schizophyllum": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Aleuria": {
+        "genus": ["saprotrophic"]
+    },
+    "Gymnopus": {
+        "genus": ["saprotrophic"],
+        "fusipes": ["parasitic"]
+    },
+    "Gymnopilus": {
+        "genus": ["saprotrophic"],
+        "junonius": ["saprotrophic", "parasitic"]
+    },
+    "Armillaria": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Phragmidium": {
+        "genus": ["pathogenic"]
+    },
+    "Pleurotus": {
+        "genus": ["saprotrophic", "carnivorous"]
+    },
+    "Xerocomellus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Xerocomus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Galerina": {
+        "genus": ["saprotrophic"]
+    },
+    "Parmotrema": {
+        "genus": ["lichenaceous"]
+    },
+    "Candolleomyces": {
+        "genus": ["saprotrophic"]
+    },
+    "Pholiota": {
+        "genus": ["saprotrophic"]
+    },
+    "Hebeloma": {
+        "genus": ["mycorrhizal"]
+    },
+    "Crepidotus": {
+        "genus": ["saprotrophic"]
+    },
+    "Mycena": {
+        "genus": ["saprotrophic", "mycorrhizal"]
+    },
+    "Crucibulum": {
+        "genus": ["saprotrophic"]
+    },
+    "Nidula": {
+        "genus": ["saprotrophic"]
+    },
+    "Rubroboletus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Astraeus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Leucoagaricus": {
+        "genus": ["saprotrophic"]
+    },
+    "Leucopaxillus": {
+        "genus": ["saprotrophic", "mycorrhizal"]
+    },
+    "Neurospora": {
+        "genus": ["saprotrophic"]
+    },
+    "Aspergillus": {
+        "genus": ["saprotrophic", "pathogenic"]
+    },
+    "Geastrum": {
+        "genus": ["saprotrophic"]
+    },
+    "Helvella": {
+        "genus": ["unknown"]
+    },
+    "Penicillium": {
+        "genus": ["saprotrophic", "pathogenic"]
+    },
+    "Erysiphe": {
+        "genus": ["pathogenic"]
+    },
+    "Calycina": {
+        "genus": ["saprotrophic"]
+    },
+    "Fuscoporia": {
+        "genus": ["saprotrophic", "pathogenic"]
+    },
+    "Cantharellus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Sarcoscypha": {
+        "genus": ["saprotrophic"]
+    },
+    "Cuphophyllus": {
+        "genus": ["unknown"]
+    },
+    "Usnea": {
+        "genus": ["lichenaceous"]
+    },
+    "Panus": {
+        "genus": ["saprotrophic"]
+    },
+    "Xylaria": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Lycoperdon": {
+        "genus": ["saprotrophic"]
+    },
+    "Cryptoporus": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Clavaria": {
+        "genus": ["saprotrophic"]
+    },
+    "Inocybe": {
+        "genus": ["mycorrhizal"]
+    },
+    "Xeromphalina": {
+        "genus": ["saprotrophic"]
+    },
+    "Scutellinia": {
+        "genus": ["saprotrophic"]
+    },
+    "Phyllotopsis": {
+        "genus": ["saprotrophic"]
+    },
+    "Phaeolus": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Trichaptum": {
+        "genus": ["saprotrophic"]
+    }
+}
