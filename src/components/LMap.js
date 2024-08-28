@@ -77,7 +77,7 @@ const LMap = () => {
                     fillOpacity: '1',
                     radius: 20,
                     pane: ecology
-                }).addTo(map);
+                }).bindPopup("<b>" + result.taxon.name + "</b>").addTo(map);
             });
             if (200 * requestIndex >= observations.total_results) break;
             requestIndex += 1;
