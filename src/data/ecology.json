@@ -90,7 +90,7 @@
         "genus": ["parasitic"]
     },
     "Dacrymyces": {
-        "genus": ["parasitic"]
+        "genus": ["saprotrophic"]
     },
     "Naematelia": {
         "genus": ["parasitic"]
@@ -144,6 +144,9 @@
         "genus": ["saprotrophic"]
     },
     "Suillus": {
+        "genus": ["mycorrhizal"]
+    },
+    "Suillellus": {
         "genus": ["mycorrhizal"]
     },
     "Tapinella": {
@@ -316,7 +319,43 @@
     "Phaeolus": {
         "genus": ["saprotrophic", "parasitic"]
     },
-    "Trichaptum": {
+    "Abortiporus": {
+        "genus": ["saprotrophic", "parasitic"]
+    },
+    "Chroogomphus": {
+        "genus": ["parasitic"]
+    },
+    "Cladosporium": {
+        "genus": ["saprotrophic", "pathogenic"]
+    },
+    "Entoloma": {
+        "genus": ["saprotrophic", "mycorrhizal"]
+    },
+    "Hypomyces": {
+        "genus": ["pathogenic"]
+    },
+    "Hohenbuehelia": {
+        "genus": ["saprotrophic", "carnivorous"]
+    },
+    "Laccaria": {
+        "genus": ["mycorrhizal"]
+    },
+    "Leucocoprinus": {
         "genus": ["saprotrophic"]
+    },
+    "Marasmius": {
+        "genus": ["saprotrophic"]
+    },
+    "Trichoderma": {
+        "genus": ["saprotrophic", "pathogenic"]
+    },
+    "Tricholoma": {
+        "genus": ["mycorrhizal"]
+    },
+    "Cortinarius": {
+        "genus": ["mycorrhizal"]
+    },
+    "Fomitopsis": {
+        "genus": ["saprotrophic", "parasitic"]
     }
 }

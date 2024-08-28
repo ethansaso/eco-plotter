@@ -1,6 +1,6 @@
 import L from 'leaflet';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Col, Row } from 'reactstrap';
+import { Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import Ecology from '../data/ecology.json';
 
 const LMap = () => {
@@ -8,6 +8,7 @@ const LMap = () => {
     const [selectedLng, setSelectedLng] = useState(0);
     const mapRef = useRef(null)
     const lastCircleRef = useRef(null)
+    const meterRadius = 650;
 
     const colorMap = useMemo(() => ({
         'saprotrophic': 'red',
@@ -15,12 +16,12 @@ const LMap = () => {
         'mycorrhizal': 'yellow',
         'lichenaceous': 'green',
         'pathogenic': 'aqua',
-        'unknown': 'transparent',
+        'unknown': 'slategray',
     }), [])
 
     async function fetchObservations(pageNumber) {
         try {
-            const response = await fetch(`https://api.inaturalist.org/v1/observations?lat=${selectedLat}&lng=${selectedLng}&radius=0.5&per_page=200&taxon_id=47170&hrank=genus&page=${pageNumber}`);
+            const response = await fetch(`https://api.inaturalist.org/v1/observations?lat=${selectedLat}&lng=${selectedLng}&radius=${meterRadius / 1000}&per_page=200&taxon_id=47170&hrank=genus&page=${pageNumber}`);
 
             if (!response.ok) {
                 throw new Error('Network response not ok')
@@ -41,35 +42,25 @@ const LMap = () => {
     async function populateMap() {
         if (!mapRef.current || !selectedLat || !selectedLng) return;
 
-        const currentLat = selectedLat, currentLng = selectedLng
-        console.log(currentLat, currentLng);
-
-        const map = mapRef.current;
-        let isFinished = false;
-        const maxRequests = 15;
-        let requestIndex = 1;
-        const counts = {};
-
-        while (!isFinished && requestIndex <= maxRequests) {
-            const observations = await fetchObservations(requestIndex);
+        const addResultsToMap = (observations) => {
             observations.results.forEach((result) => {
-                // Converts string into array of numbers
                 const [lat, lng] = result.location.split(',').map(Number);
                 const [genus, species] = result.taxon.name.split(' ');
-                
+
                 const ecology = getEcology(genus, species);
-                const paneName = ecology || 'unknown'; // Use 'unknown' if ecology is not found
+                const paneName = ecology || 'unknown';
+
                 if (!map.getPane(paneName)) {
                     console.error(`Pane "${paneName}" not found.`);
                     return;
                 }
                 if (ecology === 'unknown') {
-                    counts[genus] = (counts[genus] || 0) + 1
-                    console.log(genus, species)
+                    counts[genus] = (counts[genus] || 0) + 1;
+                    console.log(genus, species);
                 }
 
                 const color = colorMap[ecology] ?? 'slategray';
-    
+
                 // Adds marker at lat/lng
                 L.circle([lat, lng], {
                     stroke: false,
@@ -79,10 +70,63 @@ const LMap = () => {
                     pane: ecology
                 }).bindPopup("<b>" + result.taxon.name + "</b>").addTo(map);
             });
-            if (200 * requestIndex >= observations.total_results) break;
-            requestIndex += 1;
         }
-        console.log(counts)
+    
+        const currentLat = selectedLat, currentLng = selectedLng;
+        console.log(currentLat, currentLng);
+    
+        const map = mapRef.current;
+        const maxRequests = 30;
+        const counts = {};
+    
+        try {
+            // First request to get total results and first page of data
+            const initialResponse = await fetchObservations(1);
+            const totalResults = initialResponse.total_results;
+            const totalPages = Math.ceil(totalResults / 200); // Assuming 200 results per page
+    
+            // Calculate how many requests we can make
+            const pagesToFetch = Math.min(maxRequests, totalPages);
+            let requestIndex = 2;
+
+            addResultsToMap(initialResponse)
+    
+            while (requestIndex <= pagesToFetch) {
+                const requests = [];
+                for (let i = 0; i < 5 && requestIndex <= pagesToFetch; i++) {
+                    requests.push(fetchObservations(requestIndex));
+                    requestIndex++;
+                }
+    
+                // Wait for all 5 requests to complete
+                const results = await Promise.all(requests);
+    
+                results.forEach((observations) => {
+                    addResultsToMap(observations)
+                });
+    
+                // Break the loop if we have processed all results
+                if (requestIndex > pagesToFetch) {
+                    break;
+                }
+            }
+    
+            console.log(counts);
+    
+        } catch (error) {
+            console.error('Error fetching observations:', error);
+        }
+    }
+
+    const togglePaneVisibility = (ecology) => {
+        const map = mapRef.current;
+        const pane = map.getPane(ecology);
+        console.log(pane.style.display);
+        if (pane.style.display === 'none') {
+            pane.style.display = 'block';
+        } else {
+            pane.style.display = 'none';
+        }
     }
 
     useEffect(() => {
@@ -114,7 +158,7 @@ const LMap = () => {
             const newCircle = L.circle([e.latlng.lat, e.latlng.lng], {
                 color: 'purple',
                 fillOpacity: 0,
-                radius: 500
+                radius: meterRadius
             }).addTo(map);
 
             lastCircleRef.current = newCircle; // Update the reference to the new circle
@@ -130,6 +174,21 @@ const LMap = () => {
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <button onClick={populateMap} style={{height: '30px'}}>Populate organisms</button>
                     <div id='map' className="leaflet-map" />
+                    <Form className="checkbox-section">
+                        {Object.keys(colorMap).map((ecology) => {
+                            return (
+                                <FormGroup key={ecology} switch>
+                                    <Input
+                                    type="switch"
+                                    role="switch"
+                                    defaultChecked={true}
+                                    onClick={() => togglePaneVisibility(ecology)}
+                                    />
+                                    <Label check>{ecology}</Label>
+                                </FormGroup>
+                            )
+                        })}
+                    </Form>
                 </div>
             </Col>
         </Row>
